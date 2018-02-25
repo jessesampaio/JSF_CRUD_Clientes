@@ -1,0 +1,11 @@
+CREATE SCHEMA `jsf_crud`;
+
+USE jsf_crud;
+
+
+CREATE TABLE IF NOT EXISTS `clientes` ( 
+`id` int(11) NOT NULL AUTO_INCREMENT, 
+`nome` varchar(200) NOT NULL, 
+`email` varchar(200) NOT NULL, 
+`idade` int(11) NOT NULL, 
+PRIMARY KEY (`id`));

@@ -5,23 +5,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core" >
 
 <h:body>
     <h:form>
     	<h:outputLabel value="Nome:" ></h:outputLabel><br/>
-    	<h:inputText value="nome" ></h:inputText><br/><br/>
-    	
+    	<h:inputText id="nome" value="#{cliBean.nome}" ></h:inputText>
+    	<br/><br/>  	
     	<h:outputLabel value="E-mail:" ></h:outputLabel><br/>
-    	<h:inputText value="email" ></h:inputText><br/><br></br>
-   
+    	<h:inputText id="email" value="#{cliBean.email}" ></h:inputText>
+    	<br/><br/>
     	<h:outputLabel value="Idade:" ></h:outputLabel><br/>
-    	<h:inputText value="idade" ></h:inputText><br/><br/>
-    	
-    	<h:commandButton action="index" value="Cadastrar" ></h:commandButton>
-    	<h:commandButton action="index" value="Limpar" ></h:commandButton>
-    	
-   	</h:form>
-    	
+    	<h:inputText id="idade" value="#{cliBean.idade}" ></h:inputText>
+    	<br/><br/>    	
+    	<h:commandButton action="#{cliBean.addUser}" type="submit" value="Cadastrar" ></h:commandButton>
+    	<h:commandButton type="reset" value="Limpar" ></h:commandButton>
+    </h:form>    	
 </h:body>
 </html>

@@ -7,19 +7,23 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core" >
 
+<h:head>
+	<link rel="stylesheet" type="text/css" href="site.css"/>
+</h:head>
 <h:body>
     <h:form>
+    <h:outputText value="Cadastro de Clientes" style="font-size:20px; font-weight:bold" /><br/><br/>
     	<h:outputLabel value="Nome:" ></h:outputLabel><br/>
-    	<h:inputText id="nome" value="#{cliBean.nome}" ></h:inputText>
+    	<h:inputText id="nome" value="#{cliBean.clienteVO.nome}" styleClass="estilo_campos" ></h:inputText>
     	<br/><br/>  	
     	<h:outputLabel value="E-mail:" ></h:outputLabel><br/>
-    	<h:inputText id="email" value="#{cliBean.email}" ></h:inputText>
+    	<h:inputText id="email" value="#{cliBean.clienteVO.email}" styleClass="estilo_campos" ></h:inputText>
     	<br/><br/>
     	<h:outputLabel value="Idade:" ></h:outputLabel><br/>
-    	<h:inputText id="idade" value="#{cliBean.idade}" ></h:inputText>
+    	<h:inputText id="idade" value="#{cliBean.clienteVO.idade}" styleClass="estilo_campos" ></h:inputText>
     	<br/><br/>    	
-    	<h:commandButton action="#{cliBean.addUser}" type="submit" value="Cadastrar" ></h:commandButton>
-    	<h:commandButton type="reset" value="Limpar" ></h:commandButton>
+    	<h:commandButton action="#{cliBean.addUser}" type="submit" value="Cadastrar" styleClass="button"></h:commandButton>
+    	<h:commandButton type="reset" value="Limpar" styleClass="button" ></h:commandButton>
     </h:form>    	
 </h:body>
 </html>

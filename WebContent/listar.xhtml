@@ -4,35 +4,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core" >	
+	xmlns:f="http://java.sun.com/jsf/core">
+
 <h:head>
-	<link rel="stylesheet" type="text/css" href="site.css"/>
+	<link rel="stylesheet" type="text/css" href="site.css" />
 </h:head>
-	
-<h:dataTable value="#{cliBean.clientes}" var="dados" headerClass="header" styleClass="listagem" rowClasses="row1, row2" >
 
-<h:column>
-	<f:facet name="header">
-		<h:outputText value="Código" ></h:outputText>
-	</f:facet>
-		<h:outputText value="#{dados.id}" ></h:outputText>
+<h:body>
+	<h:form>
+		<h:dataTable value="#{cliBean.clientes}" var="dados"
+			headerClass="header" styleClass="listagem" rowClasses="row1, row2">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Código"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{dados.id}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nome"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{dados.nome}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="E-mail"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{dados.email}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Idade"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{dados.idade}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Ações"></h:outputText>
+				</f:facet>
+				<h:commandButton value="[EDITAR]" action="editar" actionListener="#{cliBean.selecionarReg}"></h:commandButton>
+				<h:commandButton value="[APAGAR]" action="deletar" actionListener="#{cliBean.selecionarReg}"></h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<h:commandLink value="Novo Cliente" action="novo" actionListener="#{cliBean.novoReg}"></h:commandLink>
+	</h:form>
 	
-</h:column>
-<h:column>
-	<f:facet name="header">
-		<h:outputText value="E-mail" ></h:outputText>
-	</f:facet>
-		<h:outputText value="#{dados.email}" ></h:outputText>
-	
-</h:column>
-<h:column>
-	<f:facet name="header">
-		<h:outputText value="Idade" ></h:outputText>
-	</f:facet>
-		<h:outputText value="#{dados.idade}" ></h:outputText>
-	
-</h:column>
-</h:dataTable>
-
-<h:link value="Novo Cliente" outcome="novo" ></h:link>
+</h:body>
 </html>

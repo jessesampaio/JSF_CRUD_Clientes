@@ -1,29 +1,52 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core" >
-
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<link rel="stylesheet" type="text/css" href="site.css"/>
+	<link rel="stylesheet" type="text/css" href="site.css" />
 </h:head>
 <h:body>
-    <h:form>
-    <h:outputText value="Cadastro de Clientes" style="font-size:20px; font-weight:bold" /><br/><br/>
-    	<h:outputLabel value="Nome:" ></h:outputLabel><br/>
-    	<h:inputText id="nome" value="#{cliBean.clienteVO.nome}" styleClass="estilo_campos" ></h:inputText>
-    	<br/><br/>  	
-    	<h:outputLabel value="E-mail:" ></h:outputLabel><br/>
-    	<h:inputText id="email" value="#{cliBean.clienteVO.email}" styleClass="estilo_campos" ></h:inputText>
-    	<br/><br/>
-    	<h:outputLabel value="Idade:" ></h:outputLabel><br/>
-    	<h:inputText id="idade" value="#{cliBean.clienteVO.idade}" styleClass="estilo_campos" ></h:inputText>
-    	<br/><br/>    	
-    	<h:commandButton action="#{cliBean.addUser}" type="submit" value="Cadastrar" styleClass="button"></h:commandButton>
-    	<h:commandButton type="reset" value="Limpar" styleClass="button" ></h:commandButton>
-    </h:form>    	
+	<h:form>
+		<h:outputText value="Cadastro de Clientes"
+			style="font-size:20px;font-weight:bold"></h:outputText>
+		<br />
+		<br />
+		<h:outputLabel value="#{labels.lbname}"></h:outputLabel>
+		<br />
+		<h:inputText id="nome" required="true"
+			requiredMessage="* Preencha este campo."
+			validatorMessage="Preencha no min 6 char."
+			value="#{cliBean.clienteVO.nome}" styleClass="estilo_campos">
+		<f:validateLength minimum="6"></f:validateLength>	
+		</h:inputText>
+		&nbsp;
+		<h:message for="nome" styleClass="erros"></h:message>
+		<br />
+		<br />
+		<h:outputLabel value="E-mail:"></h:outputLabel>
+		<br />
+		<h:inputText id="email" required="true"
+			requiredMessage="* Preencha este campo."
+			validatorMessage="* Coloque um e-mail válido."
+			value="#{cliBean.clienteVO.email}" styleClass="estilo_campos">
+			<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"></f:validateRegex>	
+		</h:inputText>
+		&nbsp;
+		<h:message for="email" styleClass="erros"></h:message>
+		<br />
+		<br />
+		<h:outputLabel value="Idade:"></h:outputLabel>
+		<br />
+		<h:inputText id="idade" value="#{cliBean.clienteVO.idade}"
+			styleClass="estilo_campos"></h:inputText>
+		<br />
+		<br />
+		<h:commandButton styleClass="button" action="#{cliBean.addUser}"
+			type="submit" value="Cadastrar"></h:commandButton>
+		<h:commandButton styleClass="button" type="reset" value="Limpar"></h:commandButton>
+	</h:form>
 </h:body>
 </html>

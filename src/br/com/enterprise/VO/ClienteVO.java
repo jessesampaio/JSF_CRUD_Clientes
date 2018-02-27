@@ -1,15 +1,11 @@
 package br.com.enterprise.VO;
 
-//Espelho da tabela
 public class ClienteVO {
 	private int id;
 	private String nome;
 	private String email;
 	private int idade;
 	
-	
-	
-	//Getters and Setters
 	public int getId() {
 		return id;
 	}
@@ -34,5 +30,4 @@ public class ClienteVO {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	
 }

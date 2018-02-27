@@ -9,19 +9,21 @@ body{
 	width: 300px;
 	border: none;
 }
+
 .button {
 	font-family: Arial;
 	font-size: 18px;
 	color: #FFFFFF;
-	background-color:#c0c0c0;
+	background-color: yellow;
 }
-.header {
+.header{
 	font-family: Arial;
 	font-size: 14px;
 	color: yellow;
 	background-color: red;
 	padding: 5px;
 }
+
 .listagem{
 	width: 100%;
 	border-color: #000000;
@@ -29,6 +31,13 @@ body{
 	border-bottom-style: solid;
 	background-color: #FFFFFF;
 }
+.erros{
+	font-family: Arial;
+	font-size: 14px;
+	color: red;
+	font-weight: bold;
+}
+
 .row1{
 	font-family: Arial;
 	font-size: 12px;
@@ -43,7 +52,3 @@ body{
 	background-color: #c0c0c0;
 	padding: 5px;
 }
-
-
-
-
